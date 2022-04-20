@@ -1,3 +1,4 @@
+
 header{
     display: flex;
     background-color: #80ced6;
@@ -79,4 +80,20 @@ img {
     background-color: transparent;
     border-color: #2f2a2d;
     color: #2f2a2d;
+}
+
+.basket-block{
+    box-sizing: border-box;
+    right: 5px;
+    top: 100px;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    border: 1px solid;
+    width: 300px;
+}
+
+.invisible{
+    display: none;
 }
