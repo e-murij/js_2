@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">Online store</div>
+
+            <form action="#" class="search-form" @submit.prevent="filter">
+                <input type="text" class="search-field" v-model="userSearch" placeholder="search">
+            </form>
+
+            <button class="btn-basket" type="button" @click="showBasket = !showBasket">Корзина</button>
+
+            <div class="basket-block" v-show="showBasket">
+                <p v-if="basketItems.length==0">Cart is empty</p>
+                <div class="cart-item" v-for="item of basketItems">
+                    <div>
+                        <p>Название: {{item.product_name}}</p>
+                        <p>Количество; {{item.quantity}}</p>
+                        <p>Цена за единицу: {{item.price}}</p>
+                        <p>Стоимость: {{item.quantity * item.price}}</p>
+                        <div class="right-block">
+                            <button class="del-btn" @click="removeItemFromBasket(item) ">&times;</button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+            <div class="products">
+                <div class="product-item" v-for="product of filtered">
+                    <img :src="imgProduct" alt="Product img">
+                    <div class="product-list">
+                        <h3>{{product.product_name}}</h3>
+                        <span class="price">{{product.price}}</span>
+                        <button class="buy-button" @click="addItemToBasket(product)">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main_vue.js"></script>
+
+</body>
+</html>
