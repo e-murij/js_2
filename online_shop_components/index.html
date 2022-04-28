@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="logo">Online store</div>
+
+        <filter_el></filter_el>
+
+        <basket ref="basket"></basket>
+
+    </header>
+
+    <error v-show="errors"> </error>
+
+    <main>
+
+        <products ref="products"></products>
+
+    </main>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/BasketComp.js"></script>
+    <script src="js/ProductsComp.js"></script>
+    <script src="js/FilterComp.js"></script>
+    <script src="js/ErrorComp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
